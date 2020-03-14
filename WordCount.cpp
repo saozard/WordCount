@@ -18,8 +18,8 @@ int CC(char file[]){		//字符数统计函数
 		printf("寻找文件失败，当前目录无该文件\n");
 		return -1;
 	}
-    char lastchar;
-	while((lastchar = fgetc(pf))!=EOF){
+    char lastchar = fgetc(pf);
+	while(lastchar!=EOF){
         lastchar = fgetc(pf);
 		i++;
 	}
@@ -135,7 +135,7 @@ int main(){//主函数
 				}
 			}
 		}
-		printf("	输入错误，请重新输入\n");
+		printf("	输入格式错误，请重新输入\n");
 	}
     system("pause");
 	return 0;
