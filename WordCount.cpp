@@ -3,19 +3,19 @@
 #include<iostream>
 using namespace std;
 
-int EON(char input[]){
+int EON(char input[]){		//æ£€æµ‹å‰6ä¸ªå­—ç¬¦æ˜¯å¦æ˜¯wc.exe
 	if(input[0]=='w'&&input[1]=='c'&&input[2]=='.'&&input[3]=='e'&&input[4]=='x'&&input[5]=='e')
 		return 1;
 	else
 		return 0;
 }
 
-int CC(char file[]){		//×Ö·ûÊıÍ³¼Æº¯Êı 
+int CC(char file[]){		//å­—ç¬¦æ•°ç»Ÿè®¡å‡½æ•° 
 	FILE *pf=NULL;
 	int i=0;
 	pf=fopen(file,"r");
 	if(pf==NULL){
-		printf("Ñ°ÕÒÎÄ¼şÊ§°Ü£¬µ±Ç°Ä¿Â¼ÎŞ¸ÃÎÄ¼ş\n");
+		printf("å¯»æ‰¾æ–‡ä»¶å¤±è´¥ï¼Œå½“å‰ç›®å½•æ— è¯¥æ–‡ä»¶\n");
 		return -1;
 	}
     char lastchar;
@@ -27,12 +27,12 @@ int CC(char file[]){		//×Ö·ûÊıÍ³¼Æº¯Êı
     return i;
 }
 
-int WC(char file[]){		//´ÊÊıÍ³¼Æº¯Êı 
+int WC(char file[]){		//è¯æ•°ç»Ÿè®¡å‡½æ•° 
 	FILE *pf=NULL;
 	int i=0;
 	pf=fopen(file,"r");
 	if(pf==NULL){
-		printf("Ñ°ÕÒÎÄ¼şÊ§°Ü£¬µ±Ç°Ä¿Â¼ÎŞ¸ÃÎÄ¼ş\n");
+		printf("å¯»æ‰¾æ–‡ä»¶å¤±è´¥ï¼Œå½“å‰ç›®å½•æ— è¯¥æ–‡ä»¶\n");
 		return -1;
 	}
     char lastchar;
@@ -51,12 +51,12 @@ int WC(char file[]){		//´ÊÊıÍ³¼Æº¯Êı
     return i;
 }
 
-int LC(char file[]){		//ĞĞÊıÍ³¼Æº¯Êı 
+int LC(char file[]){		//è¡Œæ•°ç»Ÿè®¡å‡½æ•° 
 	FILE *pf=NULL;
 	int i=0;
 	pf=fopen(file,"r");
 	if(pf==NULL){
-		printf("Ñ°ÕÒÎÄ¼şÊ§°Ü£¬µ±Ç°Ä¿Â¼ÎŞ¸ÃÎÄ¼ş\n");
+		printf("å¯»æ‰¾æ–‡ä»¶å¤±è´¥ï¼Œå½“å‰ç›®å½•æ— è¯¥æ–‡ä»¶\n");
 		return -1;
 	}
     char lastchar;
@@ -75,15 +75,15 @@ int LC(char file[]){		//ĞĞÊıÍ³¼Æº¯Êı
 }
 
 
-int main(){//Ö÷º¯Êı 
+int main(){//ä¸»å‡½æ•° 
 	int i,j;
 	char input[200],File[200];
-	printf("³ÌĞò¹¦ÄÜÈçÏÂ£º\n");
-	printf("	wc.exe -c file.c     //·µ»ØÎÄ¼ş file.c µÄ×Ö·ûÊı\n");
-	printf("	wc.exe -w file.c    //·µ»ØÎÄ¼ş file.c µÄ´ÊµÄÊıÄ¿\n");
-	printf("	wc.exe -l file.c      //·µ»ØÎÄ¼ş file.c µÄĞĞÊı\n");
+	printf("ç¨‹åºåŠŸèƒ½å¦‚ä¸‹ï¼š\n");
+	printf("	wc.exe -c file.c     //è¿”å›æ–‡ä»¶ file.c çš„å­—ç¬¦æ•°\n");
+	printf("	wc.exe -w file.c    //è¿”å›æ–‡ä»¶ file.c çš„è¯çš„æ•°ç›®\n");
+	printf("	wc.exe -l file.c      //è¿”å›æ–‡ä»¶ file.c çš„è¡Œæ•°\n");
 	while(1){
-		printf("ÇëÊäÈë£º");
+		printf("è¯·è¾“å…¥ï¼š");
 		gets(input);
 		if(EON(input)==1){
 			if(input[6]==' '){
@@ -98,7 +98,7 @@ int main(){//Ö÷º¯Êı
 							cc=CC(File);
 							if(cc==-1)
 								continue;
-							printf("ÎÄ¼şµÄ×Ö·ûÊıÎª£º%d\n",cc);
+							printf("æ–‡ä»¶çš„å­—ç¬¦æ•°ä¸ºï¼š%d\n",cc);
 							continue;
 						}
 					}
@@ -112,7 +112,7 @@ int main(){//Ö÷º¯Êı
 							wc=WC(File);
 							if(wc==-1)
 								continue;
-							printf("ÎÄ¼şµÄ´ÊÊıÎª£º%d\n",wc);
+							printf("æ–‡ä»¶çš„è¯æ•°ä¸ºï¼š%d\n",wc);
 							continue;
 						}
 					}	
@@ -126,14 +126,14 @@ int main(){//Ö÷º¯Êı
 							lc=LC(File);
 							if(lc==-1)
 								continue;
-							printf("ÎÄ¼şµÄĞĞÊıÎª£º%d\n",lc);
+							printf("æ–‡ä»¶çš„è¡Œæ•°ä¸ºï¼š%d\n",lc);
 							continue;
 						}
 					}	
 				}
 			}
 		}
-		printf("	ÊäÈë´íÎó£¬ÇëÖØĞÂÊäÈë\n");
+		printf("	è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	}
     system("pause");
 	return 0;
