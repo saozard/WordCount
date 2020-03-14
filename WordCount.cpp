@@ -61,6 +61,8 @@ int LC(char file[]){		//行数统计函数
 	}
     char lastchar;
     lastchar = fgetc(pf);
+    if(lastchar==EOF)
+		return i;
     while(lastchar!=EOF){
 		if(lastchar=='\n'){
 		    i++;
